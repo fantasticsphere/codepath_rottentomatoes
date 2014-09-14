@@ -20,6 +20,54 @@
             </objects>
             <point key="canvasLocation" x="-371" y="129"/>
         </scene>
+        <!--Movie Details View Controller-->
+        <scene sceneID="HHm-83-Mst">
+            <objects>
+                <viewController storyboardIdentifier="movieDetails" id="zNi-sm-2WA" customClass="MovieDetailsViewController" customModule="rottentomatoes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qzo-N1-yjP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="u6V-8I-fb1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view alpha="0.74999999999999978" contentMode="center" id="vji-UX-m2m" customClass="MoveDetailsTextView" customModule="rottentomatoes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="358" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rio 2 (2014)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3dn-QL-d5d">
+                                        <rect key="frame" x="19" y="14" width="283" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9qS-om-7Ob" appends="YES" id="ZIT-0z-w0G"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Leh-09-Gpe"/>
+                    <connections>
+                        <outlet property="coverImage" destination="u6V-8I-fb1" id="pzl-ig-EMY"/>
+                        <outlet property="detailsTextView" destination="vji-UX-m2m" id="ksi-qW-Rcy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H1r-PG-bpa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="9qS-om-7Ob">
+                    <connections>
+                        <action selector="panMovieDetailsTextView:" destination="zNi-sm-2WA" id="A5C-aT-hRp"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="461" y="129"/>
+        </scene>
         <!--Movies-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -33,13 +81,13 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="100" id="d2E-uX-hAF" customClass="MovieCell" customModule="rottentomatoes" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="100" id="d2E-uX-hAF" customClass="MovieCell" customModule="rottentomatoes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d2E-uX-hAF" id="ZHo-8D-3lJ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="FRC-L6-DYh">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="FRC-L6-DYh">
                                                     <rect key="frame" x="15" y="8" width="71" height="83"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -63,6 +111,7 @@
                                             <outlet property="movieTitleLabel" destination="z2O-LG-x5C" id="p9K-G9-bbm"/>
                                             <outlet property="posterView" destination="FRC-L6-DYh" id="sm6-QL-kNw"/>
                                             <outlet property="synopsisLabel" destination="2ws-Nq-NOO" id="AuR-pI-Qt2"/>
+                                            <segue destination="zNi-sm-2WA" kind="push" identifier="openMovieDetails" id="wGd-iG-jbD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

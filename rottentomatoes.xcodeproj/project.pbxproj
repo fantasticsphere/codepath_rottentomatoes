@@ -15,6 +15,8 @@
 		F2DA1FD319C1484E00066B45 /* rottentomatoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DA1FD219C1484E00066B45 /* rottentomatoesTests.swift */; };
 		F2DA1FDF19C14DC200066B45 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DA1FDE19C14DC200066B45 /* MovieCell.swift */; };
 		F2DA1FE319C14DF200066B45 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DA1FE219C14DF200066B45 /* MoviesViewController.swift */; };
+		F2F569AD19C59795009CF53D /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F569AC19C59795009CF53D /* MovieDetailsViewController.swift */; };
+		F2F569AF19C5AEB4009CF53D /* MoveDetailsTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F569AE19C5AEB4009CF53D /* MoveDetailsTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		F2DA1FDE19C14DC200066B45 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		F2DA1FE219C14DF200066B45 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		F2DA1FE419C17DF700066B45 /* rottentomatoes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rottentomatoes-Bridging-Header.h"; sourceTree = "<group>"; };
+		F2F569AC19C59795009CF53D /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
+		F2F569AE19C5AEB4009CF53D /* MoveDetailsTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveDetailsTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				F2DA1FBA19C1484E00066B45 /* Supporting Files */,
 				F2DA1FDE19C14DC200066B45 /* MovieCell.swift */,
 				F2DA1FE419C17DF700066B45 /* rottentomatoes-Bridging-Header.h */,
+				F2F569AC19C59795009CF53D /* MovieDetailsViewController.swift */,
+				F2F569AE19C5AEB4009CF53D /* MoveDetailsTextView.swift */,
 			);
 			path = rottentomatoes;
 			sourceTree = "<group>";
@@ -266,8 +272,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F569AD19C59795009CF53D /* MovieDetailsViewController.swift in Sources */,
 				F2DA1FBD19C1484E00066B45 /* AppDelegate.swift in Sources */,
 				F2DA1FDF19C14DC200066B45 /* MovieCell.swift in Sources */,
+				F2F569AF19C5AEB4009CF53D /* MoveDetailsTextView.swift in Sources */,
 				F2DA1FE319C14DF200066B45 /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
