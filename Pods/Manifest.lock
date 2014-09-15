@@ -20,14 +20,20 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - ISMethodSwizzling (0.0.2)
+  - ISRefreshControl (1.4.1):
+    - ISMethodSwizzling (~> 0.0.2)
   - M13ProgressSuite (1.2.5)
 
 DEPENDENCIES:
   - AFNetworking
+  - ISRefreshControl (~> 1.4)
   - M13ProgressSuite (~> 1.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  ISMethodSwizzling: 867d17ca20bd0ca2d3e7c1516a0c1f0ee9ca94c9
+  ISRefreshControl: a22ffc641933ca489b85d192d591546f93c47d07
   M13ProgressSuite: bf63f5592f1e40767da5203199804ad5eed3eb48
 
 COCOAPODS: 0.33.1

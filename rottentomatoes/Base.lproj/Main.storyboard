@@ -93,27 +93,6 @@
             </objects>
             <point key="canvasLocation" x="461" y="129"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="wus-W9-TgM">
-            <objects>
-                <viewController id="8Um-pJ-gVC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Whf-Px-XMe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="8al-jX-IvF" customClass="M13ProgressViewRing">
-                                <rect key="frame" x="69" y="149" width="182" height="156"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u7a-sn-sGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="80" y="771"/>
-        </scene>
         <!--Movies-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -122,54 +101,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="36x-T9-pbD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="100" id="d2E-uX-hAF" customClass="MovieCell" customModule="rottentomatoes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d2E-uX-hAF" id="ZHo-8D-3lJ">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="FRC-L6-DYh">
-                                                    <rect key="frame" x="15" y="8" width="71" height="83"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z2O-LG-x5C">
-                                                    <rect key="frame" x="101" y="8" width="178" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2ws-Nq-NOO">
-                                                    <rect key="frame" x="101" y="37" width="193" height="49"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="movieTitleLabel" destination="z2O-LG-x5C" id="p9K-G9-bbm"/>
-                                            <outlet property="posterView" destination="FRC-L6-DYh" id="sm6-QL-kNw"/>
-                                            <outlet property="synopsisLabel" destination="2ws-Nq-NOO" id="AuR-pI-Qt2"/>
-                                            <segue destination="zNi-sm-2WA" kind="push" identifier="openMovieDetails" id="wGd-iG-jbD"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <view alpha="0.74999999999999978" contentMode="scaleToFill" id="skt-zF-MMs" customClass="M13ProgressViewRing">
-                                <rect key="frame" x="110" y="234" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </view>
-                            <view hidden="YES" alpha="0.94999999999999996" contentMode="scaleToFill" id="gmL-yP-t26">
+                            <view hidden="YES" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" id="gmL-yP-t26">
                                 <rect key="frame" x="0.0" y="64" width="320" height="36"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warn_icon" id="PdQ-eh-ayl">
+                                        <rect key="frame" x="100" y="10" width="18" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nework Error" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xnu-Wg-1fO">
                                         <rect key="frame" x="126" y="4" width="173" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -177,20 +116,68 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warn_icon" id="PdQ-eh-ayl">
-                                        <rect key="frame" x="100" y="10" width="18" height="15"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.23984945255474452" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view alpha="0.74999999999999978" contentMode="scaleToFill" id="skt-zF-MMs" customClass="M13ProgressViewRing">
+                                <rect key="frame" x="110" y="234" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="F3a-6V-Zlt">
+                                <rect key="frame" x="0.0" y="64" width="328" height="510"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="36x-T9-pbD">
+                                        <rect key="frame" x="4" y="0.0" width="320" height="502"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="100" id="d2E-uX-hAF" customClass="MovieCell" customModule="rottentomatoes" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d2E-uX-hAF" id="ZHo-8D-3lJ">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="FRC-L6-DYh">
+                                                            <rect key="frame" x="15" y="8" width="71" height="83"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z2O-LG-x5C">
+                                                            <rect key="frame" x="101" y="8" width="178" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2ws-Nq-NOO">
+                                                            <rect key="frame" x="101" y="37" width="193" height="49"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="movieTitleLabel" destination="z2O-LG-x5C" id="p9K-G9-bbm"/>
+                                                    <outlet property="posterView" destination="FRC-L6-DYh" id="sm6-QL-kNw"/>
+                                                    <outlet property="synopsisLabel" destination="2ws-Nq-NOO" id="AuR-pI-Qt2"/>
+                                                    <segue destination="zNi-sm-2WA" kind="push" identifier="openMovieDetails" id="wGd-iG-jbD"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="Ire-a6-lYi"/>
                     <connections>
+                        <outlet property="mainView" destination="kh9-bI-dsS" id="I01-wL-Mum"/>
+                        <outlet property="movieList" destination="36x-T9-pbD" id="Btf-Jz-WeE"/>
+                        <outlet property="moviesScrollView" destination="F3a-6V-Zlt" id="DYU-fR-olW"/>
                         <outlet property="progressView" destination="skt-zF-MMs" id="ISS-vY-2Yy"/>
-                        <outlet property="tableView" destination="36x-T9-pbD" id="HW2-wy-EQt"/>
                         <outlet property="warningView" destination="gmL-yP-t26" id="Mdg-3D-xAg"/>
                     </connections>
                 </viewController>

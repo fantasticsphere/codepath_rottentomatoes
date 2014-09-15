@@ -48,6 +48,18 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 4
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
 
+// ISMethodSwizzling
+#define COCOAPODS_POD_AVAILABLE_ISMethodSwizzling
+#define COCOAPODS_VERSION_MAJOR_ISMethodSwizzling 0
+#define COCOAPODS_VERSION_MINOR_ISMethodSwizzling 0
+#define COCOAPODS_VERSION_PATCH_ISMethodSwizzling 2
+
+// ISRefreshControl
+#define COCOAPODS_POD_AVAILABLE_ISRefreshControl
+#define COCOAPODS_VERSION_MAJOR_ISRefreshControl 1
+#define COCOAPODS_VERSION_MINOR_ISRefreshControl 4
+#define COCOAPODS_VERSION_PATCH_ISRefreshControl 1
+
 // M13ProgressSuite
 #define COCOAPODS_POD_AVAILABLE_M13ProgressSuite
 #define COCOAPODS_VERSION_MAJOR_M13ProgressSuite 1

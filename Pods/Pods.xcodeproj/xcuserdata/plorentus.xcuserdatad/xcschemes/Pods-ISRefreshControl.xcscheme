@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-AFNetworking.a"
-               BlueprintIdentifier = "12363C0081AB424E953EF1B4"
+               BuildableName = "libPods-ISRefreshControl.a"
+               BlueprintIdentifier = "4C74512A4A1D4BC89A51D080"
                BuildableIdentifier = "primary"
-               BlueprintName = "Pods-AFNetworking">
+               BlueprintName = "Pods-ISRefreshControl">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -11,33 +11,53 @@ import UIKit
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var progressView: M13ProgressViewRing!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var moviesScrollView: UIScrollView!
+    @IBOutlet weak var movieList: UITableView!
     @IBOutlet weak var warningView: UIView!
+    @IBOutlet var mainView: UIView!
 
+    var refreshControl: ISRefreshControl? = ISRefreshControl()
     var movies: [NSDictionary] = []
+    let boxOfficeURL = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=y8acjuuqktge56q4tftbsfkk&limit=20&country=us"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        
+        self.movieList.delegate = self
+        self.movieList.dataSource = self
+
+        self.mainView.bringSubviewToFront(self.progressView)
         self.progressView.hidden = false
         self.progressView.indeterminate = true
+                
+        self.movieList.addSubview(self.refreshControl!)
+        self.refreshControl?.addTarget(self, action: "refreshMovieList", forControlEvents: .ValueChanged)
         
-        var url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=y8acjuuqktge56q4tftbsfkk&limit=20&country=us"
+        self.loadMovieListFromSource()
+    }
+    
+    func loadMovieListFromSource() {
+        var url = self.boxOfficeURL
         var request = NSURLRequest(URL: NSURL(string: url))
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            self.mainView.sendSubviewToBack(self.progressView)
             self.progressView.hidden = true
             if data?.length > 0 && error == nil {
                 if var object = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary {
                     self.movies = object["movies"] as [NSDictionary]
-                    self.tableView.reloadData()
+                    self.movieList.reloadData()
                 }
+                self.mainView.sendSubviewToBack(self.warningView)
                 self.warningView.hidden = true
             } else {
+                self.mainView.bringSubviewToFront(self.warningView)
                 self.warningView.hidden = false
             }
+            self.refreshControl!.endRefreshing()
         }
+    }
+    
+    func refreshMovieList() {
+        self.loadMovieListFromSource()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

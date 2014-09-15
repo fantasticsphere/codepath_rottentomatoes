@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-ISMethodSwizzling.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ISRefreshControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-M13ProgressSuite.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>148ECE7D07FC4FF3A3974B0E</key>
+		<key>12363C0081AB424E953EF1B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B55F122B690498C8BE36E51</key>
+		<key>49CB434172C44D15B16C43D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D6338223E1BB443FA7BED923</key>
+		<key>4C74512A4A1D4BC89A51D080</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DF36E83DE804D8BBC970CE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A0E9368F73984DD0B0480B74</key>
 		<dict>
 			<key>primary</key>
 			<true/>
