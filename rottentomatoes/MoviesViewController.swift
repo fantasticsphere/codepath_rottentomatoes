@@ -12,6 +12,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var progressView: M13ProgressViewRing!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var warningView: UIView!
 
     var movies: [NSDictionary] = []
     
@@ -27,9 +28,15 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         var request = NSURLRequest(URL: NSURL(string: url))
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             self.progressView.hidden = true
-            var object = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as NSDictionary
-            self.movies = object["movies"] as [NSDictionary]
-            self.tableView.reloadData()
+            if data?.length > 0 && error == nil {
+                if var object = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary {
+                    self.movies = object["movies"] as [NSDictionary]
+                    self.tableView.reloadData()
+                }
+                self.warningView.hidden = true
+            } else {
+                self.warningView.hidden = false
+            }
         }
     }
     
@@ -45,9 +52,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         cell.movieTitleLabel.text = movie["title"] as? String
         cell.synopsisLabel.text = movie["synopsis"] as? String
         
-        var posters = movie["posters"] as NSDictionary
-        var posterUrl = posters["thumbnail"] as String
-        cell.posterView.setImageWithURL(NSURL(string: posterUrl))
+        if let posters = movie["posters"] as? NSDictionary {
+            var posterUrl = posters["thumbnail"] as String
+            cell.posterView.setImageWithURL(NSURL(string: posterUrl))
+        }
         return cell
     }
 
