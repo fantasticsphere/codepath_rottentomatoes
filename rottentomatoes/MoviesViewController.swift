@@ -10,17 +10,23 @@ import UIKit
 
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var progressView: M13ProgressViewRing!
     @IBOutlet weak var tableView: UITableView!
+
     var movies: [NSDictionary] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        self.progressView.hidden = false
+        self.progressView.indeterminate = true
         
         var url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=y8acjuuqktge56q4tftbsfkk&limit=20&country=us"
         var request = NSURLRequest(URL: NSURL(string: url))
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            self.progressView.hidden = true
             var object = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as NSDictionary
             self.movies = object["movies"] as [NSDictionary]
             self.tableView.reloadData()
@@ -34,7 +40,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell") as MovieCell
         
-        var movie = movies[indexPath.row]
+        var movie = self.movies[indexPath.row]
         cell.movie = movie
         cell.movieTitleLabel.text = movie["title"] as? String
         cell.synopsisLabel.text = movie["synopsis"] as? String
